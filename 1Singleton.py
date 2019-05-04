@@ -7,20 +7,20 @@ from Core import MetaSingleton
 
 DIR=os.getcwd()
 
-class Singleton(object):
+class Singleton_B(object):
 	'''
 	1.覆盖用于实例化的特殊方法：__new__方法，来控制对象创建
 	'''
 	def __new__(cls):
 		if not hasattr(cls, 'instance'):
-			cls.instance = super(Singleton, cls).__new__(cls)
+			cls.instance = super(Singleton_B, cls).__new__(cls)
 		return cls.instance
 
 	@classmethod
 	def Demo(cls):
 		print("1.__new__方式")
-		s1 = Singleton()
-		s2 = Singleton()
+		s1 = Singleton_B()
+		s2 = Singleton_B()
 		print("Object s1", s1, "id:", id(s1))
 		print("Object s2", s2, "id:", id(s2))
 
@@ -174,7 +174,7 @@ if __name__ == "__main__":
 
 	print("Start!\n\n")
 
-	clsList = [Singleton, Singleton_lazy, Logger, Borg, Database, TP_Singleton]
+	clsList = [Singleton_B, Singleton_lazy, Logger, Borg, Database, TP_Singleton]
 	for c in clsList:
 		print(c.__name__, c.__doc__)
 		c.Demo()
