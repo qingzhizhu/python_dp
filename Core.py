@@ -3,6 +3,8 @@
 #desc:基类
 
 
+
+#region MetaSingleton 单例元类
 class MetaSingleton(type):
 	'''
 	单例类的元类,使用方式：metaclass=MetaSingleton
@@ -25,3 +27,18 @@ class MetaSingleton(type):
 	def __init__(self, p1, p2, p3):
 		print("MetaSingleton __init__",self, "p1=",p1,  "p2=",p2)#,  "p3=",p3)
 	
+#endregion
+
+
+#region Prototype 原型基类 包含深浅copy, 相当于java 的 Cloneable
+import copy
+
+class Prototype:
+	
+	def clone(self):
+		return copy.copy(self)
+	def deepclone(self):
+		return copy.deepcopy(self)
+
+#endregion
+
