@@ -114,6 +114,12 @@ class Borg(object):
 		print("id(b1.x)==id(b2.x)", id(b1.x), id(b2.x))
 
 
+#python设计模式一系列代码，大多在mac上写，后来在一次win10 运行单例模式，报错
+#Sqlite3: ImportError: DLL load failed: The specified module could not be found.
+#解决方案： https://stackoverflow.com/questions/54876404/unable-to-import-sqlite3
+#下载64为sqlite.dll 放在 anaconda/DLLs 重启vscode，就没问题了
+#https://www.sqlite.org/2019/sqlite-dll-win64-x64-3280000.zip
+
 import sqlite3
 class Database(metaclass=MetaSingleton):
 	'''
