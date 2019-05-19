@@ -32,12 +32,12 @@ class On(ComputerState):
 
 class Suspend(ComputerState):
 	name = "suspend"
-	label = "休眠"
+	label = "挂起"
 	allowed = ["on"]
 
 class Hibernate(ComputerState):
 	name = "hibernate"
-	label = "睡眠"
+	label = "休眠"
 	allowed = ["on"]
 
 
